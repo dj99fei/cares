@@ -1,0 +1,16 @@
+{
+  "cares": {
+    "com.tencent.mm": {
+      "who": "小鱼|妈|爸|",
+      "what": "@你"
+    },
+    "com.sankuai.xmpp": {
+      "who": "巩守强|张伊宁|付瑶|魏映琳|熊娜|赵哲|雷晓伟",
+      "what": "需求|@你|评审"
+    },
+    "com.tencent.mobileqq": {
+      "who": "我的电脑|",
+      "what": "@你"
+    }
+  }
+}
