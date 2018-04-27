@@ -6,7 +6,7 @@ package com.dj99fei.cares;
 
 public class Application extends android.app.Application {
 
-    public static Application application;
+    static Application application;
 
     @Override
     public void onCreate() {

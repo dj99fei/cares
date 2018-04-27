@@ -11,26 +11,10 @@ import java.util.regex.Pattern;
  */
 
 @Keep
-public class CaresHolder implements Serializable {
+public class CareConfig implements Serializable {
+
+    public static final String DIVIDER = ",";
     Map<String, CareItem> cares;
-
-    public static CaresHolder instance;
-
-    public static void setInstance(CaresHolder caresHolder) {
-        instance = caresHolder;
-    }
-
-    public static CaresHolder getInstance() {
-        return instance;
-    }
-
-
-    public static CareItem getCare(String key) {
-        if (instance == null || instance.cares == null) {
-            return null;
-        }
-        return instance.cares.get(key);
-    }
 
     public static class CareItem implements Serializable {
 
@@ -52,14 +36,14 @@ public class CaresHolder implements Serializable {
                 return false;
             }
             for (String s : texts) {
-                if (Pattern.compile(".*(" + content + ".*)").matcher(s).matches()) {
+                if (Pattern.compile(".*(" + content + ").*").matcher(s).matches()) {
                     return true;
                 }
             }
             return false;
         }
 
-        public boolean matchWhat(String texts) {
+        public boolean matchWhat(String... texts) {
             return match(what, texts);
         }
 

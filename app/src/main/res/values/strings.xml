@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">NotAlarm</string>
+    <string name="app_name">Cares</string>
+    <string name="dnd">免打扰</string>
 </resources>

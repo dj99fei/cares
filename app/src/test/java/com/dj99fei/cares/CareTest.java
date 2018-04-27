@@ -12,15 +12,19 @@ public class CareTest {
 
     @Test
     public void testMatchWho() {
-        CaresHolder.CareItem item = new CaresHolder.CareItem("程飞|熊娜|巩守强|选座交易管理沟通", "@你|需求|飞哥");
-        String tickerText = "巩守强在群组[V5 选座交易管理沟通]: 飞哥下周还在吗？我请客，大家一起吃个饭";
+        CareConfig.CareItem item = new CareConfig.CareItem(".*(程飞|熊娜|巩守强|选交易管理沟通).*", "@你|需求|飞");
+        String tickerText = "巩守强在群组[V5 选座交易管理沟通]: 飞下周还在吗？我请客，大家一起吃个饭";
+        assertTrue(item.matchWho(tickerText));
+
+        item = new CareConfig.CareItem(".*(付瑶|熊娜|巩守强|选座交易管理沟通).*", "@你|需求|");
+        tickerText = "付瑶: 飞下周还在吗？我请客，大家一起吃个饭";
+        String title = "团app电影频道讨论组";
         assertTrue(item.matchWho(tickerText));
     }
 
-
     @Test
     public void testMatchWhat() {
-        CaresHolder.CareItem item = new CaresHolder.CareItem("", "@你|需求|吃*饭");
+        CareConfig.CareItem item = new CareConfig.CareItem("", "@你|需求|吃*饭");
         String tickerText = "巩守强在群组[V5 选座交易管理沟通]: 飞哥下周还在吗？我请客，大家一起吃个饭";
         assertTrue(item.matchWhat(tickerText));
     }

@@ -21,12 +21,14 @@
 
         <service
             android:name="com.dj99fei.cares.NotificationListener"
+            android:label="cares"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService"/>
             </intent-filter>
         </service>
     </application>
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
 
 </manifest>

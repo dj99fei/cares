@@ -17,4 +17,9 @@ public final class Utils {
         vibrator.vibrate(new long[]{300, 500}, 0);
     }
 
+    public static void cancelVibrate(Context context) {
+        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.cancel();
+    }
+
 }

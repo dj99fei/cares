@@ -4,8 +4,11 @@ package com.dj99fei.cares.alarm;
  * Created by chengfei on 2018/4/25.
  */
 
-public class CriticalAlarmAction implements AlarmAction {
+public final class CriticalAlarmAction implements AlarmAction {
 
+    private CriticalAlarmAction() {
+
+    }
 
     static CriticalAlarmAction criticalAlarm = new CriticalAlarmAction();
 
@@ -13,7 +16,7 @@ public class CriticalAlarmAction implements AlarmAction {
         return criticalAlarm;
     }
 
-    NormalAlarmAction mNormalAlarm = new NormalAlarmAction();
+    NormalAlarmAction mNormalAlarm = NormalAlarmAction.getInstance();
 
     @Override
     public void alarm(String message) {

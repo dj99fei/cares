@@ -13,16 +13,16 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file("../gewara.keystore")
-            storePassword "gewarabiz"
-            keyAlias "gewara"
-            keyPassword "gewarabiz"
+            storeFile file("../fenn.keystore")
+            storePassword "123123"
+            keyAlias "fenn"
+            keyPassword "123123"
         }
         release {
-            storeFile file("../gewara.keystore")
-            storePassword "gewarabiz"
-            keyAlias "gewara"
-            keyPassword "gewarabiz"
+            storeFile file("../fenn.keystore")
+            storePassword "123123"
+            keyAlias "fenn"
+            keyPassword "123123"
             // 同时满足下面两个条件才需要此配置
             // 1. Gradle版本 >= 2.14.1
             // 2. Android Gradle Plugin 版本 >= 2.2.0
@@ -36,6 +36,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -47,6 +51,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'io.reactivex:rxjava:1.1.6'
-//    implementation 'org.ansj:ansj_seg:5.1.1'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.jakewharton.rxbinding:rxbinding:1.0.1'
+    implementation 'org.ansj:ansj_seg:5.1.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
